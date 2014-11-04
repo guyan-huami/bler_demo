@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:id="@+id/btn_start_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scan for 5 secs" />
+
+    <ListView
+        android:id="@+id/lv_devices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_start_scan" >
+    </ListView>
+
+    <Button
+        android:id="@+id/btn_get_connected_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btn_start_scan"
+        android:text="get connected devices" />
+
+</RelativeLayout>

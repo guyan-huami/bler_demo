@@ -5,15 +5,15 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:allowBackup="true"
-        android:label="BLEr-Demo">
+        android:label="BLEr-Demo" >
         <activity
             android:name="ScanActivity"
             android:label="BLEr-Demo" >
@@ -23,7 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="DeviceActivity"></activity>
+        <activity android:name="DeviceActivity" >
+        </activity>
     </application>
 
 </manifest>

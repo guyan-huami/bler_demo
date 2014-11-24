@@ -1,5 +1,9 @@
 package huami.app.bler_demo;
 
+import huami.dev.bler.core.IDeviceFoundCallback;
+import huami.dev.bler.core.ScanCallback;
+import huami.dev.bler.gatt.service.IAuthService;
+
 import java.util.List;
 
 import android.app.Activity;
@@ -12,9 +16,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import dev.bler.core.IDeviceFoundCallback;
-import dev.bler.core.ScanCallback;
-import dev.bler.gatt.service.IAuthService;
 
 public final class ScanActivity extends Activity {
 
@@ -44,7 +45,7 @@ public final class ScanActivity extends Activity {
 
 			@Override
 			public void onDeviceFound(final BluetoothDevice device, int rssi, byte[] scanRecord) {
-				// rssi可以用来粗略的判断设备的远近，例如rssi>-60可以视为较近，rssi<-80可以视为较远
+				// rssi可以用来粗略的判断设备的远近，例如rssi>-40可以视为极近，rssi>-60可以视为较近，rssi<-80可以视为较远。
 				runOnUiThread(new Runnable() {
 
 					@Override
@@ -57,7 +58,7 @@ public final class ScanActivity extends Activity {
 			}
 
 		});
-		findViewById(R.id.btn_start_scan).setOnClickListener(new View.OnClickListener() {
+		findViewById(R.id.btn_scan).setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -72,13 +73,11 @@ public final class ScanActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// 优先查询已经连接的设备
+				// 查询已经连接的设备。应用在启动时应该优先查找系统已经连接着的设备，这些设备通常不会出现在scan返回的设备中。
 				final List<BluetoothDevice> connectedDevices = ((BluetoothManager) getSystemService(BLUETOOTH_SERVICE)).getConnectedDevices(BluetoothProfile.GATT);
-				if (!connectedDevices.isEmpty()) {
-					adapter.clear();
-					adapter.addAll(connectedDevices);
-					adapter.notifyDataSetChanged();
-				}
+				adapter.clear();
+				if (!connectedDevices.isEmpty()) adapter.addAll(connectedDevices);
+				adapter.notifyDataSetChanged();
 			}
 
 		});

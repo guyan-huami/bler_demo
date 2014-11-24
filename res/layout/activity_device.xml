@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:layout_margin="5dp" >
 
     <Button
         android:id="@+id/btn_authorize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="authorize" />
+        android:text="authorize()：授权设备。该过程会将密钥写入手环对应appid的存储区域，并触发手环的敲击确认过程。在有效时间内敲击会返回true，否则返回false。应用仅需调用该函数一次，重复调用会覆盖之前写入的密钥。"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
         android:id="@+id/btn_authenticate"
@@ -17,14 +18,41 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_authorize"
         android:layout_centerHorizontal="true"
-        android:text="authenticate" />
+        android:text="authenticate()：认证设备。用于验证手环是否是之前授权过的设备。是返回true，否则返回false。"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
-        android:id="@+id/btn_verify"
+        android:id="@+id/btn_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_authenticate"
         android:layout_centerHorizontal="true"
-        android:text="verify" />
+        android:text="confirm()：触发手环敲击确认流程，并等待结果。在有效时间内敲击会返回true，否则返回false。"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/btn_update_conn_params"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_confirm"
+        android:layout_centerHorizontal="true"
+        android:text="update conn params：请求变更BLE连接间隔。请求命令发送成功返回true，失败返回false。连接间隔变更成功会调用回调。"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_update_conn_params"
+        android:layout_centerHorizontal="true"
+        android:text="开始传输实时传感器数据" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_start"
+        android:layout_centerHorizontal="true"
+        android:text="停止传输实时传感器数据" />
 
 </RelativeLayout>

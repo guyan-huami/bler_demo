@@ -31,28 +31,27 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
-        android:id="@+id/btn_update_conn_params"
+        android:id="@+id/btn_alert1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_confirm"
         android:layout_centerHorizontal="true"
-        android:text="update conn params：请求变更BLE连接间隔。请求命令发送成功返回true，失败返回false。连接间隔变更成功会调用回调。"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:text="ALERT LEVEL 1" />
 
     <Button
-        android:id="@+id/btn_start"
+        android:id="@+id/btn_alert2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_update_conn_params"
+        android:layout_below="@+id/btn_alert1"
         android:layout_centerHorizontal="true"
-        android:text="开始传输实时传感器数据" />
+        android:text="ALERT LEVEL 2" />
 
     <Button
-        android:id="@+id/btn_stop"
+        android:id="@+id/btn_cancel_alert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_start"
+        android:layout_below="@+id/btn_alert2"
         android:layout_centerHorizontal="true"
-        android:text="停止传输实时传感器数据" />
+        android:text="CANCEL ALERT" />
 
 </RelativeLayout>

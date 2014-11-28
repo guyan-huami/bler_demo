@@ -22,36 +22,12 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
-        android:id="@+id/btn_confirm"
+        android:id="@+id/btn_read_rssi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_authenticate"
         android:layout_centerHorizontal="true"
-        android:text="confirm()：触发手环敲击确认流程，并等待结果。在有效时间内敲击会返回true，否则返回false。"
+        android:text="readRSSI()：读取手环当前时刻的信号强度。RSSI越接近0说明信号越好，该值可用于判断手环与手机的大致距离。通过设定阈值可以大致限定手环解锁的有效范围。"
         android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <Button
-        android:id="@+id/btn_alert1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_confirm"
-        android:layout_centerHorizontal="true"
-        android:text="ALERT LEVEL 1" />
-
-    <Button
-        android:id="@+id/btn_alert2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_alert1"
-        android:layout_centerHorizontal="true"
-        android:text="ALERT LEVEL 2" />
-
-    <Button
-        android:id="@+id/btn_cancel_alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_alert2"
-        android:layout_centerHorizontal="true"
-        android:text="CANCEL ALERT" />
 
 </RelativeLayout>

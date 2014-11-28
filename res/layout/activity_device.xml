@@ -30,28 +30,4 @@
         android:text="confirm()：触发手环敲击确认流程，并等待结果。在有效时间内敲击会返回true，否则返回false。"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <Button
-        android:id="@+id/btn_alert1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_confirm"
-        android:layout_centerHorizontal="true"
-        android:text="ALERT LEVEL 1" />
-
-    <Button
-        android:id="@+id/btn_alert2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_alert1"
-        android:layout_centerHorizontal="true"
-        android:text="ALERT LEVEL 2" />
-
-    <Button
-        android:id="@+id/btn_cancel_alert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_alert2"
-        android:layout_centerHorizontal="true"
-        android:text="CANCEL ALERT" />
-
 </RelativeLayout>
